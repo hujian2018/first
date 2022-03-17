@@ -1,5 +1,5 @@
 /*  1:   */ package com.blog.controller;
-/*  2:   */
+/*  2:   */ 
 /*  3:   */ import com.blog.entity.Blogger;
 /*  4:   */ import com.blog.service.BloggerService;
 /*  5:   */ import com.blog.util.CryptographyUtil;
@@ -11,14 +11,14 @@
 /* 11:   */ import org.springframework.stereotype.Controller;
 /* 12:   */ import org.springframework.web.bind.annotation.RequestMapping;
 /* 13:   */ import org.springframework.web.servlet.ModelAndView;
-/* 14:   */
+/* 14:   */ 
 /* 15:   */ @Controller
 /* 16:   */ @RequestMapping({"/blogger"})
 /* 17:   */ public class BloggerController
 /* 18:   */ {
 /* 19:   */   @Resource
 /* 20:   */   private BloggerService bloggerService;
-/* 21:   */
+/* 21:   */   
 /* 22:   */   @RequestMapping({"/login"})
 /* 23:   */   public String login(Blogger blogger, HttpServletRequest request)
 /* 24:   */   {
@@ -37,7 +37,7 @@
 /* 37:   */     }
 /* 38:46 */     return "login";
 /* 39:   */   }
-/* 40:   */
+/* 40:   */   
 /* 41:   */   @RequestMapping({"/aboutMe"})
 /* 42:   */   public ModelAndView aboutMe()
 /* 43:   */     throws Exception
@@ -49,19 +49,7 @@
 /* 49:61 */     mav.setViewName("mainTemp");
 /* 50:62 */     return mav;
 /* 51:   */   }
-
-    @RequestMapping({"/regist"})
-    public String regist(Blogger blogger, HttpServletRequest request) {
-        Blogger queryBlogger = this.bloggerService.getByUserName(blogger.getUserName());
-        if(null != queryBlogger) {
-            request.setAttribute("blogger", blogger);
-            request.setAttribute("errorInfo", "用户名已存在，请登录！");
-            return "login";
-        }
-        this.bloggerService.insert(blogger);
-        return "redirect:/admin/main.jsp";
-    }
-}
+/* 52:   */ }
 
 
 

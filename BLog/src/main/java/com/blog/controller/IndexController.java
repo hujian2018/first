@@ -68,6 +68,9 @@
 /* 68:78 */     mav.addObject("mainPage", "foreground/blog/list.jsp");
 /* 69:79 */     mav.addObject("pageTitle", "Java个人博客系统");
 /* 70:80 */     mav.setViewName("mainTemp");
+
+
+
 /* 71:81 */     return mav;
 /* 72:   */   }
 /* 73:   */   
@@ -83,8 +86,12 @@
 /* 83:   */   }
 /* 84:   */ }
 
-
-/* Location:           D:\classes\
- * Qualified Name:     com.blog.controller.IndexController
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           D:\classes\
+
+ * Qualified Name:     com.blog.controller.IndexController
+
+ * JD-Core Version:    0.7.0.1
+
  */

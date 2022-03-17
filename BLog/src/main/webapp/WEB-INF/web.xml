@@ -48,7 +48,8 @@
 	<listener>
 		<listener-class>com.blog.service.impl.InitComponent</listener-class>
 	</listener>
-	
+
+
 	<!-- 添加对springmvc的支持 -->
 	<servlet>
 		<servlet-name>springMVC</servlet-name>

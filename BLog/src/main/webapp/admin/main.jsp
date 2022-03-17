@@ -92,6 +92,17 @@
 		},"json");
 	}
 
+	function refreshSystemRss(){
+		$.post("${pageContext.request.contextPath}/admin/system/refreshSystemRss.do",{},function(result){
+			if(result.success){
+				$.messager.alert("系统提示","已成功更新rss缓存！");
+			}else{
+				$.messager.alert("系统提示","更新rss缓存失败！");
+			}
+		},"json");
+	}
+
+
 </script>
 </head>
 <body class="easyui-layout">
@@ -138,6 +149,7 @@
 		    <a href="javascript:openTab('友情链接管理','linkManage.jsp','icon-link')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-link'" style="width: 150px">友情链接管理</a>
 			<a href="javascript:openPasswordModifyDialog()" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-modifyPassword'" style="width: 150px;">修改密码</a>
 			<a href="javascript:refreshSystem()" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-refresh'" style="width: 150px;">刷新系统缓存</a>
+			<a href="javascript:refreshSystemRss()" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-refresh'" style="width: 150px;">刷新rss缓存</a>
 			<a href="javascript:logout()" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-exit'" style="width: 150px;">安全退出</a>
 		</div>
 	</div>

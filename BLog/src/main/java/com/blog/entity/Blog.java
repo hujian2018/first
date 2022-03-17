@@ -152,10 +152,33 @@
 /* 152:    */   {
 /* 153:113 */     this.imagesList = imagesList;
 /* 154:    */   }
-/* 155:    */ }
 
-
-/* Location:           D:\classes\
- * Qualified Name:     com.blog.entity.Blog
- * JD-Core Version:    0.7.0.1
+    @Override
+    public String toString() {
+        return "Blog{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", summary='" + summary + '\'' +
+                ", releaseDate=" + releaseDate +
+                ", clickHit=" + clickHit +
+                ", replyHit=" + replyHit +
+                ", content='" + content + '\'' +
+                ", contentNoTag='" + contentNoTag + '\'' +
+                ", blogType=" + blogType +
+                ", blogCount=" + blogCount +
+                ", releaseDateStr='" + releaseDateStr + '\'' +
+                ", keyWord='" + keyWord + '\'' +
+                ", imagesList=" + imagesList +
+                '}';
+    }
+    /* 155:    */ }
+
+
+
+/* Location:           D:\classes\
+
+ * Qualified Name:     com.blog.entity.Blog
+
+ * JD-Core Version:    0.7.0.1
+
  */

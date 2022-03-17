@@ -13,15 +13,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="proFile" column="proFile"/>
 		<result property="imageName" column="imageName"/>
 	</resultMap>
-
+	
 	<select id="find"  resultMap="BloggerResult">
 		select * from t_blogger where id=1;
 	</select>
-
+	
 	<select id="getByUserName" parameterType="String" resultMap="BloggerResult">
 		select * from t_blogger where userName=#{userName}
 	</select>
-
+	
 	<update id="update" parameterType="Blogger">
 		update t_blogger
 		<set>
@@ -43,8 +43,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</set>
 		where id=1
 	</update>
-
-	<insert id="insert" parameterType="Blogger">
-		insert into t_blogger (user_name, password) values (#{userName}, #{password})
-	</insert>
-</mapper>
+	
+</mapper> 

@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:p="http://www.springframework.org/schema/p"
-    xmlns:aop="http://www.springframework.org/schema/aop"
-    xmlns:context="http://www.springframework.org/schema/context"
-    xmlns:jee="http://www.springframework.org/schema/jee"
-    xmlns:tx="http://www.springframework.org/schema/tx"
-    xsi:schemaLocation="
-        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:jee="http://www.springframework.org/schema/jee"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+
+	   xsi:schemaLocation="http://www.springframework.org/schema/aop
+	   http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
         http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
-        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
-
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+">
 	<!--<bean class="com.blog.service.impl.InitComponent">-->
 
 	<!--</bean>-->
@@ -20,9 +21,11 @@
 	<!-- 配置数据源 -->
 	<bean id="dataSource"
 		class="com.alibaba.druid.pool.DruidDataSource">
-		<property name="url" value="jdbc:mysql://172.16.51.78:3306/db_blog3?useUnicode=true&amp;characterEncoding=UTF-8"/>
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+		<property name="url"
+		          value="jdbc:mysql://127.0.0.1:3306/db_blog3?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"/>
 		<property name="username" value="root"/>
-		<property name="password" value="root"/>
+		<property name="password" value="123456"/>
 	</bean>
 
 	<!-- 配置mybatis的sqlSessionFactory -->
@@ -109,4 +112,6 @@
 
    <!-- 自动扫描 -->
 	<context:component-scan base-package="com.blog.service" />
+
+
 </beans>

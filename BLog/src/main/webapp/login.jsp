@@ -113,7 +113,7 @@ a{
 }
 
 </STYLE>
-
+     
 <SCRIPT type="text/javascript">
 $(function(){
 	//得到焦点
@@ -174,23 +174,20 @@ function checkForm(){
 		</DIV>
 		<P style="padding: 30px 0px 10px; position: relative;">
 			<SPAN class="u_logo"></SPAN>
-			<INPUT id="userName" name="userName" class="ipt" type="text" placeholder="请输入用户名" value="${blogger.userName }">
+			<INPUT id="userName" name="userName" class="ipt" type="text" placeholder="请输入用户名" value="${blogger.userName }"> 
 	    </P>
 		<P style="position: relative;">
-			<SPAN class="p_logo"></SPAN>
-			<INPUT id="password" name="password" class="ipt"  type="password" placeholder="请输入密码" value="${blogger.password }">
+			<SPAN class="p_logo"></SPAN>         
+			<INPUT id="password" name="password" class="ipt"  type="password" placeholder="请输入密码" value="${blogger.password }">   
 	  	</P>
 		<DIV style="height: 50px; line-height: 50px; margin-top: 30px; border-top-color: rgb(231, 231, 231); border-top-width: 1px; border-top-style: solid;">
 			<P style="margin: 0px 35px 20px 45px;">
-			<SPAN style="float: left;"><a href="${pageContext.request.contextPath}/index.html">Java个人博客系统</a></SPAN>
+			<SPAN style="float: left;"><a href="${pageContext.request.contextPath}/index.html">Java个人博客系统</a></SPAN> 
 			<span><font color="red" id="error">${errorInfo }</font></span>
-	        <SPAN style="float: right;">
-	              <input type="submit" style="background: rgb(0, 142, 173); padding: 7px 10px; border-radius: 4px; border: 1px solid rgb(26, 117, 152); border-image: none; color: rgb(255, 255, 255); font-weight: bold;" value="登录"/>
-			</SPAN>
-			<SPAN style="float: right; margin-right: 10px;">
-				  <input type="submit" style="background: rgb(106, 90, 205); padding: 7px 10px; border-radius: 4px; border: 1px solid rgb(106, 90, 205); border-image: none; color: rgb(255, 255, 255); font-weight: bold;" value="注册"/>
-			</SPAN>
-			</P>
+	        <SPAN style="float: right;"> 
+	              <input type="submit" style="background: rgb(0, 142, 173); padding: 7px 10px; border-radius: 4px; border: 1px solid rgb(26, 117, 152); border-image: none; color: rgb(255, 255, 255); font-weight: bold;" value="登录"/> 
+	         </SPAN>         
+	         </P>
 	    </DIV>
 	</DIV>
 </form>
