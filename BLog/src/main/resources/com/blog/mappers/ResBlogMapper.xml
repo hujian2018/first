@@ -16,7 +16,7 @@
 
     </resultMap>
     <select id="selectAll" resultMap="BlogResult" >
-        select * from t_blog
+        select * from t_blog order by releaseDate desc
     </select>
 
 

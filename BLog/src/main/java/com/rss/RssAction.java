@@ -10,7 +10,7 @@ import java.util.List;
 @SuppressWarnings({})
 public class RssAction{
 
-	
+
 	@SuppressWarnings("unchecked")
 	public void testBuildObject(List one, List two, String path) {
 		try {
@@ -41,7 +41,7 @@ public class RssAction{
 //			}
 
 			// 建立Rss的Channel信息
-			builder.createChannel("测试个人博客-测试","http://localhost:8080/Blog/blog/articles/", "测试","zh-cn", new Date(), "测试");
+			builder.createChannel("测试个人博客-测试","http://localhost:8090/blog/articles/", "测试","zh-cn", new Date(), "测试");
 
 			builder.buildChannel(path+"\\rss.xml");
 		} catch (Exception e) {

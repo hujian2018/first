@@ -172,15 +172,15 @@ public class RssBuilder {
 		output.output(this.feed, writer);
 
 		//获取需要复制的文件
-		File file=new File(filePath);
-		//创建文件流对象
-		FileInputStream fis=null;
-		FileOutputStream fos=null;
-		String path="E:\\毕设代码\\Blog\\src\\main\\webapp\\rss.xml";
-		getPath(file, fis, fos, path);
-
-		String path1="E:\\毕设代码\\Blog\\out\\artifacts\\Blog\\rss.xml";
-		getPath(file, fis, fos, path1);
+//		File file=new File(filePath);
+//		//创建文件流对象
+//		FileInputStream fis=null;
+//		FileOutputStream fos=null;
+//		String path="D:\\wonderful\\Blog\\src\\main\\webapp\\rss.xml";
+//		getPath(file, fis, fos, path);
+//
+//		String path1="D:\\wonderful\\Blog\\out\\artifacts\\Blog\\rss.xml";
+//		getPath(file, fis, fos, path1);
 
 	}
 
@@ -189,11 +189,10 @@ public class RssBuilder {
 			fis=new FileInputStream(file);
 			fos=new FileOutputStream(new File(path));
 			//为读取文件做准备
-			byte[] bs=new byte[50];//储存读取的数据
-			int count=0;//储存读取的数据量
+			byte[] bs=new byte[1024];//储存读取的数据
 			//边读取，边复制
-			while((count=fis.read(bs))!=-1){
-				fos.write(bs, 0, count);
+			while((fis.read(bs))!=-1){
+				fos.write(bs);
 				fos.flush();
 			}
 //			System.out.println("替换成功");

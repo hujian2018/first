@@ -1,6 +1,7 @@
 /*   1:    */ package com.blog.controller.admin;
-/*   2:    */ 
-/*   3:    */ import com.blog.entity.Blog;
+/*   2:    */
+/*   3:    */ import com.blog.aop.RefreshRssAnnotation;
+import com.blog.entity.Blog;
 /*   4:    */ import com.blog.entity.PageBean;
 /*   5:    */ import com.blog.lucene.BlogIndex;
 /*   6:    */ import com.blog.service.BlogService;
@@ -18,7 +19,7 @@
 /*  18:    */ import org.springframework.stereotype.Controller;
 /*  19:    */ import org.springframework.web.bind.annotation.RequestMapping;
 /*  20:    */ import org.springframework.web.bind.annotation.RequestParam;
-/*  21:    */ 
+/*  21:    */
 /*  22:    */ @Controller
 /*  23:    */ @RequestMapping({"/admin/blog"})
 /*  24:    */ public class BlogAdminController
@@ -26,8 +27,9 @@
 /*  26:    */   @Resource
 /*  27:    */   private BlogService blogService;
 /*  28: 40 */   private BlogIndex blogIndex = new BlogIndex();
-/*  29:    */   
+/*  29:    */
 /*  30:    */   @RequestMapping({"/save"})
+                @RefreshRssAnnotation
 /*  31:    */   public String save(Blog blog, HttpServletResponse response)
 /*  32:    */     throws Exception
 /*  33:    */   {
@@ -51,7 +53,7 @@
 /*  51: 65 */     ResponseUtil.write(response, result);
 /*  52: 66 */     return null;
 /*  53:    */   }
-/*  54:    */   
+/*  54:    */
 /*  55:    */   @RequestMapping({"/list"})
 /*  56:    */   public String list(@RequestParam(value="page", required=false) String page, @RequestParam(value="rows", required=false) String rows, Blog s_blog, HttpServletResponse response)
 /*  57:    */     throws Exception
@@ -72,8 +74,9 @@
 /*  72: 93 */     ResponseUtil.write(response, result);
 /*  73: 94 */     return null;
 /*  74:    */   }
-/*  75:    */   
+/*  75:    */
 /*  76:    */   @RequestMapping({"/delete"})
+                @RefreshRssAnnotation
 /*  77:    */   public String delete(@RequestParam("ids") String ids, HttpServletResponse response)
 /*  78:    */     throws Exception
 /*  79:    */   {
@@ -88,7 +91,7 @@
 /*  88:113 */     ResponseUtil.write(response, result);
 /*  89:114 */     return null;
 /*  90:    */   }
-/*  91:    */   
+/*  91:    */
 /*  92:    */   @RequestMapping({"/findById"})
 /*  93:    */   public String findById(@RequestParam("id") String id, HttpServletResponse response)
 /*  94:    */     throws Exception
@@ -100,8 +103,12 @@
 /* 100:    */   }
 /* 101:    */ }
 
-
-/* Location:           D:\classes\
- * Qualified Name:     com.blog.controller.admin.BlogAdminController
- * JD-Core Version:    0.7.0.1
+
+
+/* Location:           D:\classes\
+
+ * Qualified Name:     com.blog.controller.admin.BlogAdminController
+
+ * JD-Core Version:    0.7.0.1
+
  */

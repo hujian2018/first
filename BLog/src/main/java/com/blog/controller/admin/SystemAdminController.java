@@ -94,12 +94,11 @@ import net.sf.json.JSONObject;
             throws Exception {
         RssAction rss=new RssAction();
 
-        String path="E:\\阅读器\\ROOT";
+        //String path="E:\\阅读器\\ROOT";
+        String path="D:\\wonderful\\Blog\\src\\main\\webapp";
         try {
             List<Blog> blogs = resBlogService.selectAll();
-            rss.testBuildObject(blogs,
-                    null,
-                    path );
+            rss.testBuildObject(blogs, null,  path );
         } catch (Exception e) {
             e.printStackTrace();
         }
